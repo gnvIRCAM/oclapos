@@ -1,0 +1,14 @@
+*.onnx
+.env
+*pycache*
+*pytest*
+*build*
+*externals*
+*egg-info*
+.ipynb_checkpoints
+dist/*
+.vscode
+*DS_Store
+*data/*
+*.pt
+test.ipynb
