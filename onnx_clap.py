@@ -19,12 +19,13 @@ clap.forward = clap.audio_encoder.forward
 torch.onnx.export(
     clap, 
     x, 
-    'clap_stupiderer.onnx', 
+    'clap.onnx', 
     export_params=True,        
     opset_version=17,          
     do_constant_folding=True, 
     input_names = ['input'],   
     output_names = ['output'], 
-    dynamic_axes={'input' : {0 : 'batch_size'},    
+    dynamic_axes={'input' : {0 : 'batch_size', 1: 'duration'},    
                 'output' : {0 : 'batch_size'}}
     )
+print('Model succesfully exported')

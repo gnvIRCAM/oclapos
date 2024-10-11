@@ -6,7 +6,7 @@ torch.set_grad_enabled(False)
 from msclap import CLAP
 import onnxruntime
 
-x_numpy = np.random.randn(1, 22050).astype(np.float32)
+x_numpy = np.random.randn(1, 4*22050).astype(np.float32)
 x_torch = torch.from_numpy(x_numpy)
 clap = CLAP(version='2022')
 clap = clap.clap
