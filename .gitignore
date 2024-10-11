@@ -12,3 +12,4 @@ dist/*
 *data/*
 *.pt
 test.ipynb
+*samples*
