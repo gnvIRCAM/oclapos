@@ -13,3 +13,4 @@ dist/*
 *.pt
 test.ipynb
 *samples*
+embeddings.npy
