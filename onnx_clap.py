@@ -9,17 +9,15 @@ from msclap import CLAP
 clap = CLAP(version='2022')
 clap = clap.clap
 delattr(clap, 'caption_encoder') 
-# delattr(clap, 'audio_encoder.base.spectrogram_extractor') 
-# delattr(clap, 'audio_encoder.base.logmel_extractor') 
 
-x = torch.randn(1, 22050)
+x = torch.randn(1, 16384)
 y, _ = clap.audio_encoder(x)
 clap.forward = clap.audio_encoder.forward
 
 torch.onnx.export(
     clap, 
     x, 
-    'clap.onnx', 
+    'clap_buffer_2048.onnx', 
     export_params=True,        
     opset_version=17,          
     do_constant_folding=True, 
