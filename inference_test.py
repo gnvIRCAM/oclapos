@@ -13,7 +13,7 @@ clap = clap.clap
 delattr(clap, 'caption_encoder') 
 clap_output = clap.audio_encoder(x_torch)[0]
 
-ort_session = onnxruntime.InferenceSession("clap.onnx", providers=["CPUExecutionProvider"])
+ort_session = onnxruntime.InferenceSession("clap_buffer_2048.onnx", providers=["CPUExecutionProvider"])
 
 # compute ONNX Runtime output prediction
 ort_inputs = {ort_session.get_inputs()[0].name: x_numpy}

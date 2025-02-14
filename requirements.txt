@@ -3,3 +3,5 @@ onnx
 onnxruntime
 python-dotenv
 msclap
+absl-py
+umap
